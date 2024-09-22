@@ -1,4 +1,4 @@
-// Product Data Array
+
 const products = [
     { name: "Laptop", category: "Electronics", price: 1200 },
     { name: "Smartphone", category: "Electronics", price: 800 },
@@ -8,10 +8,10 @@ const products = [
     { name: "Book - CSS Mastery", category: "Books", price: 25 }
 ];
 
-// Function to Display Products
+
 function displayProducts(products) {
     const productList = document.getElementById('product-list');
-    productList.innerHTML = ''; // Clear previous content
+    productList.innerHTML = ''; 
 
     products.forEach(product => {
         const productItem = document.createElement('div');
@@ -25,7 +25,6 @@ function displayProducts(products) {
     });
 }
 
-// Function to Filter Products by Category
 function filterProducts(category) {
     let filteredProducts = [];
     if (category === 'All') {
@@ -36,7 +35,7 @@ function filterProducts(category) {
     displayProducts(filteredProducts);
 }
 
-// Adding Event Listeners to Filter Buttons
+
 document.querySelectorAll('.filter-btn').forEach(button => {
     button.addEventListener('click', function () {
         document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
@@ -45,5 +44,5 @@ document.querySelectorAll('.filter-btn').forEach(button => {
     });
 });
 
-// Display All Products Initially
+
 filterProducts('All');
